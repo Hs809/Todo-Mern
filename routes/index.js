@@ -58,7 +58,6 @@ router.delete("/", async (req, res) => {
   const id = req.body.todoId;
   try {
     const todoData = await Todos.deleteOne({ _id: id });
-    console.log(todoData)
     return res.status(200).send(JSON.stringify(todoData));
   } catch (error) {
     console.log(error.message);
